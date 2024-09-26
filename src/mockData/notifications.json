@@ -1,0 +1,32 @@
+[
+	{
+		"message": "New bug reported in the mobile app.",
+		"id": 101,
+		"timestamp": "2024-09-25T10:15:30Z",
+		"type": "Bug"
+	},
+	{
+		"message": "Subscription renewed successfully for JohnDoe.",
+		"id": 102,
+		"timestamp": "2024-09-24T08:30:45Z",
+		"type": "Subscription"
+	},
+	{
+		"message": "New user JaneSmith registered on the platform.",
+		"id": 103,
+		"timestamp": "2024-09-23T14:20:10Z",
+		"type": "New User"
+	},
+	{
+		"message": "Bug fix deployed for the e-commerce platform.",
+		"id": 104,
+		"timestamp": "2024-09-22T09:50:00Z",
+		"type": "Bug"
+	},
+	{
+		"message": "Subscription expired for MichaelClark.",
+		"id": 105,
+		"timestamp": "2024-09-21T07:45:55Z",
+		"type": "Subscription"
+	}
+]

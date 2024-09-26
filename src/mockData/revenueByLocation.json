@@ -1,0 +1,18 @@
+{
+	"revenueByLocation": [
+		{"location": "North America", "revenue": 150000},
+		{"location": "Europe", "revenue": 120000},
+		{"location": "Asia", "revenue": 95000},
+		{"location": "South America", "revenue": 45000},
+		{"location": "Africa", "revenue": 30000},
+		{"location": "Australia", "revenue": 25000}
+	],
+	"revenueByCountry": [
+		{"country": "USA", "revenue": 100000},
+		{"country": "Germany", "revenue": 40000},
+		{"country": "Japan", "revenue": 50000},
+		{"country": "Brazil", "revenue": 20000},
+		{"country": "South Africa", "revenue": 15000},
+		{"country": "Australia", "revenue": 25000}
+	]
+}
