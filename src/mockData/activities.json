@@ -4,34 +4,34 @@
 		"id": 201,
 		"timestamp": "2024-09-25T11:10:20Z",
 		"type": "Project",
-		"user": "JohnDoe"
+		"user": "John Doe"
 	},
 	{
 		"message": "Subscription renewed for Mobile App Development.",
 		"id": 202,
 		"timestamp": "2024-09-24T09:15:40Z",
 		"type": "Subscription",
-		"user": "JaneSmith"
+		"user": "Jane Smith"
 	},
 	{
-		"message": "New user registered: MarkJohnson.",
+		"message": "New user registered: Mark Johnson.",
 		"id": 203,
 		"timestamp": "2024-09-23T15:05:30Z",
 		"type": "New User",
-		"user": "MarkJohnson"
+		"user": "Mark Johnson"
 	},
 	{
 		"message": "Completed task: Bug fix for Data Analytics Dashboard.",
 		"id": 204,
 		"timestamp": "2024-09-22T10:40:25Z",
 		"type": "Bug Fix",
-		"user": "EmilyBrown"
+		"user": "Emily Brown"
 	},
 	{
 		"message": "Cloud Migration project rejected due to incomplete documentation.",
 		"id": 205,
 		"timestamp": "2024-09-21T08:20:10Z",
 		"type": "Project",
-		"user": "MichaelClark"
+		"user": "Michael Clark"
 	}
 ]
