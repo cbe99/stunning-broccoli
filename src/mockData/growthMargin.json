@@ -2,33 +2,33 @@
 	"projectionsVsActuals": [
 		{
 			"month": "2024-01",
-			"projection": 28000,
-			"actual": 27000
+			"projection": 21000000,
+			"actual": 17500000
 		},
 		{
 			"month": "2024-02",
-			"projection": 32000,
-			"actual": 30000
+			"projection": 26000000,
+			"actual": 20500000
 		},
 		{
 			"month": "2024-03",
-			"projection": 34000,
-			"actual": 32000
+			"projection": 22000000,
+			"actual": 19000000
 		},
 		{
 			"month": "2024-04",
-			"projection": 31000,
-			"actual": 29000
+			"projection": 29000000,
+			"actual": 22000000
 		},
 		{
 			"month": "2024-05",
-			"projection": 33000,
-			"actual": 31000
+			"projection": 33000000,
+			"actual": 31000000
 		},
 		{
 			"month": "2024-06",
-			"projection": 37000,
-			"actual": 35000
+			"projection": 24000000,
+			"actual": 20600000
 		}
 	]
 }

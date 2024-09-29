@@ -1,19 +1,8 @@
-{
-	"revenueByWeek": [
-		{"week": "2024-W01", "revenue": 5000},
-		{"week": "2024-W02", "revenue": 6500},
-		{"week": "2024-W03", "revenue": 7000},
-		{"week": "2024-W04", "revenue": 4800},
-		{"week": "2024-W05", "revenue": 5300},
-		{"week": "2024-W06", "revenue": 5900},
-		{"week": "2024-W07", "revenue": 6300}
-	],
-	"revenueByMonth": [
-		{"month": "2024-01", "revenue": 27000},
-		{"month": "2024-02", "revenue": 30000},
-		{"month": "2024-03", "revenue": 32000},
-		{"month": "2024-04", "revenue": 29000},
-		{"month": "2024-05", "revenue": 31000},
-		{"month": "2024-06", "revenue": 35000}
-	]
-}
+[
+	{"month": 1, "2024Revenue": 7000000, "2023Revenue": 17000000},
+	{"month": 2, "2024Revenue": 18000000, "2023Revenue": 9540000},
+	{"month": 3, "2024Revenue": 17000000, "2023Revenue": 15000000},
+	{"month": 4, "2024Revenue": 14500000, "2023Revenue": 18500000},
+	{"month": 5, "2024Revenue": 17003000, "2023Revenue": 21003000},
+	{"month": 6, "2024Revenue": 21000000, "2023Revenue": 17000000}
+]

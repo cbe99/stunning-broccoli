@@ -1,0 +1,28 @@
+[
+	{
+		"type": "Customers",
+		"number": 3781,
+		"change": {"value": 11.01, "direction": "increase"},
+		"color": "lightblue"
+	},
+	{
+		"type": "Revenue",
+		"number": 695,
+		"currency": "USD",
+		"change": {"value": 15.03, "direction": "increase"},
+		"color": "secondary"
+	},
+	{
+		"type": "Orders",
+		"number": 1219,
+		"change": {"value": 0.03, "direction": "decrease"},
+		"color": "secondary"
+	},
+	{
+		"type": "Growth",
+		"number": 30.1,
+		"unit": "%",
+		"change": {"value": 6.08, "direction": "increase"},
+		"color": "dark"
+	}
+]

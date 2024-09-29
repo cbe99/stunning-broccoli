@@ -1,22 +1,21 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import ThemeSwitch from './components/themeSwitch';
-import Home from './pages/home';
-import Sidebar from './components/sidebar';
+import {Routes, Route} from 'react-router-dom';
+import HomePage from '../pages/home';
+import DefaultDashboardPage from '../pages/defaultDashboard';
 
-const Routes = () => {
-	return <></>;
-	// <Router>
-	// 	<ThemeSwitch>
-	// 		<Sidebar />
-	// 		<Routes>
-	// 			<Route
-	// 				path="/"
-	// 				element={<Home />}
-	// 			/>
-	// 		</Routes>
-	// 	</ThemeSwitch>
-	// </Router>
+const AppRoutes = () => {
+	return (
+		<Routes>
+			<Route
+				path="/"
+				element={<HomePage />}
+			/>
+			<Route
+				path="/default"
+				element={<DefaultDashboardPage />}
+			/>
+		</Routes>
+	);
 };
 
-export default Routes;
+export default AppRoutes;
