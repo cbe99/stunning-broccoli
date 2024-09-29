@@ -1,14 +1,6 @@
 import React from 'react';
 import {Toolbar, IconButton, Typography, Switch} from '@mui/material';
-import {
-	Menu,
-	Favorite,
-	WbSunny,
-	NightsStay,
-	ChevronLeft,
-	ChevronRight,
-	MenuBook,
-} from '@mui/icons-material';
+import {Menu, Favorite, WbSunny, NightsStay} from '@mui/icons-material';
 import {useLocation} from 'react-router-dom';
 import {AppBar, DrawerHeader} from './header.styled';
 import {useTheme} from '@emotion/react';
@@ -51,6 +43,7 @@ const Header = ({
 					component="div"
 					sx={{flexGrow: 1}}
 				>
+					Dashboards /{' '}
 					{pathnames.map((value, index) => (
 						<span key={index}>
 							{index > 0 && ' / '}

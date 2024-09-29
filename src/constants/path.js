@@ -4,26 +4,45 @@ export const PATHS = [
     {
         heading: 'Favorites',
         items: [
-            { name: 'Overview', icon: StarBorder, route: '/overview' },
-            { name: 'Projects', icon: StarBorder, route: '/projects' },
+            {
+                name: 'Overview',
+                icon: StarBorder,
+                route: '/overview',
+                children: []
+            },
+            {
+                name: 'Projects',
+                icon: StarBorder,
+                route: '/projects',
+                children: []
+            },
         ],
     },
     {
         heading: 'Dashboard',
         items: [
-            { name: 'Default', icon: Dashboard, route: `/default` },
+            {
+                name: 'Default',
+                icon: Dashboard,
+                route: '/default',
+                children: [
+                    { name: 'Order List', route: '/default/order-list' },
+                ]
+            },
             {
                 name: 'E-Commerce',
                 icon: ShoppingCart,
-                subitems: [
-                    { name: 'E-Commerce 1', route: `/ecommerce/1` },
-                    { name: 'E-Commerce 2', route: `/ecommerce/2` },
+                route: '/ecommerce',
+                children: [
+                    { name: 'E-Commerce 1', route: '/ecommerce/1' },
+                    { name: 'E-Commerce 2', route: '/ecommerce/2' },
                 ],
             },
             {
                 name: 'Projects',
                 icon: StarBorder,
-                subitems: [
+                route: '/projects',
+                children: [
                     { name: 'Project 1', route: '/projects/1' },
                     { name: 'Project 2', route: '/projects/2' },
                 ],
@@ -31,7 +50,8 @@ export const PATHS = [
             {
                 name: 'Online Courses',
                 icon: School,
-                subitems: [
+                route: '/courses',
+                children: [
                     { name: 'Course 1', route: '/courses/1' },
                     { name: 'Course 2', route: '/courses/2' },
                 ],
@@ -44,33 +64,40 @@ export const PATHS = [
             {
                 name: 'User Profile',
                 icon: Article,
-                subitems: [
-                    { name: 'Overview', icon: Person, route: '/overview' },
-                    { name: 'Projects', icon: Person, route: '/projects' },
-                    { name: 'Campaigns', icon: Business, route: '/campaigns' },
-                    { name: 'Documents', icon: Architecture, route: '/documents' },
-                    { name: 'Followers', icon: Public, route: '/followers' },
+                route: '/pages',
+                children: [
+                    { name: 'Overview', icon: Person, route: '/pages/overview' },
+                    { name: 'Projects', icon: Person, route: '/pages/projects' },
+                    { name: 'Campaigns', icon: Business, route: '/pages/campaigns' },
+                    { name: 'Documents', icon: Architecture, route: '/pages/documents' },
+                    { name: 'Followers', icon: Public, route: '/pages/followers' },
                 ],
             },
             {
                 name: 'Account',
                 icon: Article,
-                subitems: [{ name: 'Account', icon: Person, route: '/account' }],
+                route: '/pages/account',
+                children: [
+                    { name: 'Account', icon: Person, route: '/pages/account' }
+                ],
             },
             {
                 name: 'Corporate',
                 icon: Article,
-                subitems: [{ name: 'Corporate', icon: Person, route: '/corporate' }],
+                route: '/corporate',
+                children: []
             },
             {
                 name: 'Blog',
                 icon: Article,
-                subitems: [{ name: 'Blog', icon: Person, route: '/blog' }],
+                route: '/blog',
+                children: []
             },
             {
                 name: 'Social',
                 icon: Article,
-                subitems: [{ name: 'Social', icon: Person, route: '/social' }],
+                route: '/social',
+                children: []
             },
         ],
     },

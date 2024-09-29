@@ -63,8 +63,8 @@ const App = () => {
 					component="main"
 					sx={{
 						flexGrow: 1,
-						marginLeft: isSidebarOpen ? '240px' : 0,
-						marginRight: isNotificationPanelOpen ? '210px' : 0,
+						marginLeft: isSidebarOpen ? '240px' : 8,
+						marginRight: isNotificationPanelOpen ? '210px' : 8,
 					}}
 				>
 					<Header

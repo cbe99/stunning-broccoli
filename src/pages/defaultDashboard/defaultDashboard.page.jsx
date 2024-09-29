@@ -13,8 +13,11 @@ import RevenueComparisonChart from '../../components/revenueComparisonCard';
 import RevenueLocationCard from '../../components/revenueLocationCard';
 import TopProductsTable from '../../components/topProductsTable';
 import SalesPieChart from '../../components/salesPieChart';
+import {useNavigate} from 'react-router-dom';
 
 const DefaultDashboardPage = () => {
+	const navigate = useNavigate();
+
 	return (
 		<Box sx={{flexGrow: 1, width: '100%'}}>
 			<Grid
@@ -50,6 +53,7 @@ const DefaultDashboardPage = () => {
 							<Grid
 								size={6}
 								key={metric.type}
+								onClick={() => navigate(`/default/${metric.path}`)}
 							>
 								<MetricCard {...metric} />
 							</Grid>
