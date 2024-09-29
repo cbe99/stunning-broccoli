@@ -1,4 +1,4 @@
-import { Architecture, Article, Business, Dashboard, Person, Public, School, ShoppingCart, StarBorder } from "@mui/icons-material";
+import { Architecture, Article, Business, Circle, Dashboard, Person, Public, School, ShoppingCart, StarBorder } from "@mui/icons-material";
 import DefaultIconSvg from "../assets/defaultIcon";
 import ECommerceIconSvg from "../assets/eCommerceIcon";
 import ProjectsIconSvg from "../assets/projectsIcon";
@@ -11,17 +11,15 @@ import SocialIconSvg from "../assets/socialIcon";
 
 export const PATHS = [
     {
-        heading: 'Favorites',
+        heading: 'Favorites Recently',
         items: [
             {
                 name: 'Overview',
-                icon: StarBorder,
                 route: '/overview',
                 children: []
             },
             {
                 name: 'Projects',
-                icon: StarBorder,
                 route: '/projects',
                 children: []
             },

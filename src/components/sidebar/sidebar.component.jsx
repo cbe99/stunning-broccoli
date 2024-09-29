@@ -46,10 +46,21 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 						onClick={() => handleClick(item.name)}
 						sx={{pl: 2}}
 					>
-						{Icon && (
+						{Icon ? (
 							<ListItemIcon>
 								<Icon />
 							</ListItemIcon>
+						) : (
+							<Box
+								sx={{
+									width: '6px',
+									height: '6px',
+									borderRadius: '50%',
+									backgroundColor: 'grey',
+									marginRight: 1,
+									padding: 0.5,
+								}}
+							/>
 						)}
 						<ListItemText primary={item.name} />
 						{open[item.name] ? <ExpandLess /> : <ExpandMore />}
@@ -77,10 +88,21 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 					key={item.name}
 					sx={{pl: 2}}
 				>
-					{Icon && (
+					{Icon ? (
 						<ListItemIcon>
 							<Icon />
 						</ListItemIcon>
+					) : (
+						<Box
+							sx={{
+								width: '6px',
+								height: '6px',
+								borderRadius: '50%',
+								backgroundColor: 'grey',
+								marginRight: 1,
+								padding: 0.5,
+							}}
+						/>
 					)}
 					<ListItemText primary={item.name} />
 				</ListItemLink>
@@ -141,7 +163,16 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 								key={route}
 							>
 								<ListItemIcon>
-									<StarBorder />
+									<Box
+										sx={{
+											width: '6px',
+											height: '6px',
+											borderRadius: '50%',
+											backgroundColor: 'grey',
+											marginRight: 1,
+											padding: 0.5,
+										}}
+									/>
 								</ListItemIcon>
 								<ListItemText primary={route.split('/').pop()} />
 							</ListItemLink>
