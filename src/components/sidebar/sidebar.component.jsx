@@ -7,11 +7,16 @@ import {
 	ListItemIcon,
 	ListItemText,
 	Collapse,
+	Box,
+	Avatar,
+	Toolbar,
+	Typography,
 } from '@mui/material';
 import {Link, useLocation} from 'react-router-dom';
 import {ExpandLess, ExpandMore, StarBorder} from '@mui/icons-material';
 import {sidebarWidth} from '../../constants/drawerWidth';
 import {PATHS} from '../../constants/path';
+import ByeWindSvg from '../../assets/profiles/bye-wind';
 
 const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 	const [open, setOpen] = useState({});
@@ -39,7 +44,7 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 					<ListItem
 						button
 						onClick={() => handleClick(item.name)}
-						sx={{pl: 2 * depth}}
+						sx={{pl: 2}}
 					>
 						{Icon && (
 							<ListItemIcon>
@@ -70,7 +75,7 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 				<ListItemLink
 					to={item.route}
 					key={item.name}
-					sx={{pl: 2 * depth}}
+					sx={{pl: 2}}
 				>
 					{Icon && (
 						<ListItemIcon>
@@ -97,13 +102,19 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 				},
 			}}
 		>
+			<Box sx={{marginTop: 2, display: 'flex', flexDirection: 'row'}}>
+				<Avatar sx={{width: '24px', height: '24px', marginRight: 2}}>
+					<ByeWindSvg />
+				</Avatar>
+				<Typography>Bye Wind</Typography>
+			</Box>
 			<List>
 				{PATHS.map((section) => (
 					<React.Fragment key={section.heading}>
 						<ListItem>
 							<ListItemText
 								primary={section.heading}
-								primaryTypographyProps={{fontWeight: 'bold'}}
+								primaryTypographyProps={{fontWeight: 'regular'}}
 							/>
 						</ListItem>
 						{section.items.map((item) => renderNavItem(item))}
@@ -114,7 +125,7 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 						<ListItem>
 							<ListItemText
 								primary="Favorites"
-								primaryTypographyProps={{fontWeight: 'bold'}}
+								primaryTypographyProps={{fontWeight: 'regular'}}
 							/>
 						</ListItem>
 						{favorites.map((route) => (

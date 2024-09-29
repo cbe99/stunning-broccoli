@@ -6,7 +6,7 @@ import OrlandoDiggsSvg from '../assets/profiles/orlando-diggs';
 
 export const OrderList = [
 	{
-		orderId: 'CM9801',
+		id: 'CM9801',
 		userName: 'Natalie Craig',
 		profilePicture: <NatalieCraigSvg />,
 		project: 'Landing Page',
@@ -15,7 +15,7 @@ export const OrderList = [
 		status: 'In Progress',
 	},
 	{
-		orderId: 'CM9802',
+		id: 'CM9802',
 		userName: 'Kate Morrison',
 		profilePicture: <KateMorrisonSvg />,
 		project: 'CRM Admin Pages',
@@ -24,7 +24,7 @@ export const OrderList = [
 		status: 'Complete',
 	},
 	{
-		orderId: 'CM9803',
+		id: 'CM9803',
 		userName: 'Drew Cano',
 		profilePicture: <DrewCanoSvg />,
 		project: 'Client Project',
@@ -33,7 +33,7 @@ export const OrderList = [
 		status: 'Approved',
 	},
 	{
-		orderId: 'CM9804',
+		id: 'CM9804',
 		userName: 'Orlando Diggs',
 		profilePicture: <OrlandoDiggsSvg />,
 		project: 'Admin Dashboard',
@@ -42,12 +42,12 @@ export const OrderList = [
 		status: 'Complete',
 	},
 	{
-		orderId: 'CM9805',
+		id: 'CM9805',
 		userName: 'Andi Lane',
 		profilePicture: <AndieLaneSvg />,
 		address: 'Meadow Lane Oakland',
 		project: 'App Landing Page',
-		date: '2023-02-02',
+		date: 'Feb 2, 2023',
 		status: 'Rejected',
 	},
 ];

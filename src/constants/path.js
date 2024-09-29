@@ -1,4 +1,13 @@
 import { Architecture, Article, Business, Dashboard, Person, Public, School, ShoppingCart, StarBorder } from "@mui/icons-material";
+import DefaultIconSvg from "../assets/defaultIcon";
+import ECommerceIconSvg from "../assets/eCommerceIcon";
+import ProjectsIconSvg from "../assets/projectsIcon";
+import OnlineCourseIconSvg from "../assets/onlineCourseIcon";
+import UserProfileIconSvg from "../assets/userProfileIcon";
+import AccountIconSvg from "../assets/accountIcon";
+import CorporateIconSvg from "../assets/corporateIcon";
+import BlogIconSvg from "../assets/blogIcon";
+import SocialIconSvg from "../assets/socialIcon";
 
 export const PATHS = [
     {
@@ -23,7 +32,7 @@ export const PATHS = [
         items: [
             {
                 name: 'Default',
-                icon: Dashboard,
+                icon: DefaultIconSvg,
                 route: '/default',
                 children: [
                     { name: 'Order List', route: '/default/order-list' },
@@ -31,7 +40,7 @@ export const PATHS = [
             },
             {
                 name: 'E-Commerce',
-                icon: ShoppingCart,
+                icon: ECommerceIconSvg,
                 route: '/ecommerce',
                 children: [
                     { name: 'E-Commerce 1', route: '/ecommerce/1' },
@@ -40,7 +49,7 @@ export const PATHS = [
             },
             {
                 name: 'Projects',
-                icon: StarBorder,
+                icon: ProjectsIconSvg,
                 route: '/projects',
                 children: [
                     { name: 'Project 1', route: '/projects/1' },
@@ -49,7 +58,7 @@ export const PATHS = [
             },
             {
                 name: 'Online Courses',
-                icon: School,
+                icon: OnlineCourseIconSvg,
                 route: '/courses',
                 children: [
                     { name: 'Course 1', route: '/courses/1' },
@@ -63,7 +72,7 @@ export const PATHS = [
         items: [
             {
                 name: 'User Profile',
-                icon: Article,
+                icon: UserProfileIconSvg,
                 route: '/pages',
                 children: [
                     { name: 'Overview', icon: Person, route: '/pages/overview' },
@@ -75,7 +84,7 @@ export const PATHS = [
             },
             {
                 name: 'Account',
-                icon: Article,
+                icon: AccountIconSvg,
                 route: '/pages/account',
                 children: [
                     { name: 'Account', icon: Person, route: '/pages/account' }
@@ -83,19 +92,19 @@ export const PATHS = [
             },
             {
                 name: 'Corporate',
-                icon: Article,
+                icon: CorporateIconSvg,
                 route: '/corporate',
                 children: []
             },
             {
                 name: 'Blog',
-                icon: Article,
+                icon: BlogIconSvg,
                 route: '/blog',
                 children: []
             },
             {
                 name: 'Social',
-                icon: Article,
+                icon: SocialIconSvg,
                 route: '/social',
                 children: []
             },
