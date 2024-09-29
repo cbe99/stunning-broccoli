@@ -14,7 +14,14 @@ const MetricCard = ({type, number, change, currency, unit, color}) => {
 	};
 
 	return (
-		<Card sx={{backgroundColor: cardBgColor[color], color: 'white', mb: 2}}>
+		<Card
+			sx={{
+				backgroundColor: cardBgColor[color],
+				color: 'white',
+				mb: 2,
+				height: '100%',
+			}}
+		>
 			<CardContent>
 				<Typography
 					variant="h6"

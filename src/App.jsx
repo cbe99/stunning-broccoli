@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Sidebar from './components/sidebar';
-import {createTheme, CssBaseline, ThemeProvider} from '@mui/material';
+import {createTheme, CssBaseline, ThemeProvider, Toolbar} from '@mui/material';
 import Header from './components/header';
 import NotificationPanel from './components/notificationPanel';
 import {Main} from './App.styled';
@@ -76,6 +76,7 @@ const App = () => {
 						toggleDarkMode={toggleDarkMode}
 						toggleFavorite={toggleFavorite}
 					/>
+					<Toolbar />
 					<AppRoutes />
 				</Main>
 			</Router>

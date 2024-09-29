@@ -1,9 +1,6 @@
-{
-	"companySales": [
-		{"company": "Company A", "sales": 45000},
-		{"company": "Company B", "sales": 60000},
-		{"company": "Company C", "sales": 30000},
-		{"company": "Company D", "sales": 55000},
-		{"company": "Company E", "sales": 40000}
-	]
-}
+[
+	{"company": "Directi", "sales": 300.56},
+	{"company": "Affiliate", "sales": 135.16},
+	{"company": "Sponsored", "sales": 154.02},
+	{"company": "E-mail", "sales": 48.96}
+]

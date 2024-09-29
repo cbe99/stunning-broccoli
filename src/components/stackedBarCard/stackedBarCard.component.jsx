@@ -56,8 +56,8 @@ const CustomBar = ({fill, x, y, width, height, isTop}) => {
 				width={width}
 				height={height}
 				fill={fill}
-				rx={isTop ? radius : 0} // Apply radius only for top bar
-				ry={isTop ? radius : 0} // Apply radius only for top bar
+				rx={isTop ? radius : 0}
+				ry={isTop ? radius : 0}
 			/>
 		</g>
 	);
@@ -65,7 +65,7 @@ const CustomBar = ({fill, x, y, width, height, isTop}) => {
 
 const StackedBarGraphCard = () => {
 	return (
-		<Card sx={{backgroundColor: 'secondary.light'}}>
+		<Card sx={{backgroundColor: 'secondary.light', height: '100%'}}>
 			<CardContent>
 				<Typography
 					variant="h6"
@@ -92,7 +92,7 @@ const StackedBarGraphCard = () => {
 							const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
 							return monthNames[parseInt(month.split('-')[1]) - 1];
 						}}
-						tick={{fontSize: 12}} // Adjust tick font size if needed
+						tick={{fontSize: 12}}
 					/>
 					<YAxis
 						ticks={[0, 10000000, 20000000, 30000000]}
@@ -102,18 +102,18 @@ const StackedBarGraphCard = () => {
 					<Bar
 						dataKey="projection"
 						stackId="a"
-						shape={(props) => <CustomBar {...props} />} // Top bar
+						shape={(props) => <CustomBar {...props} />}
 						fill="#A8C5DA"
-						width={20} // Bar width set to 20px
-						barSize={20} // Adjust bar size for spacing
+						width={20}
+						barSize={20}
 					/>
 					<Bar
 						dataKey="actual"
 						stackId="a"
-						shape={CustomBar} // Bottom bar with no border radius
+						shape={CustomBar}
 						fill="#E5ECF6"
-						width={20} // Bar width set to 20px
-						barSize={20} // Adjust bar size for spacing
+						width={20}
+						barSize={20}
 					/>
 				</BarChart>
 			</CardContent>

@@ -5,18 +5,20 @@ import {
 	ListItemText,
 	Divider,
 	Typography,
+	ListItemAvatar,
+	Avatar,
 } from '@mui/material';
 import React from 'react';
 import {notificationPanelWidth} from '../../constants/drawerWidth';
 import ACTIVITIES from '../../mockData/activities.json';
-import CONTACTS from '../../mockData/contactsList.json';
 import NOTIFICATIONS from '../../mockData/notifications.json';
+import {ContactsList} from '../../mockData/contactsList';
 
 const NotificationPanel = ({
 	isOpen,
 	notifications = NOTIFICATIONS,
 	activities = ACTIVITIES,
-	contacts = CONTACTS,
+	contacts = ContactsList,
 }) => {
 	return (
 		<Drawer
@@ -92,6 +94,7 @@ const NotificationPanel = ({
 						key={contact.id}
 						alignItems="flex-start"
 					>
+						<ListItemAvatar>{contact.profilePicture}</ListItemAvatar>
 						<ListItemText primary={contact.userName} />
 					</ListItem>
 				))}
