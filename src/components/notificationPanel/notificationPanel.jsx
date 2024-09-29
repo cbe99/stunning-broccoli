@@ -6,17 +6,17 @@ import {
 	Divider,
 	Typography,
 	ListItemAvatar,
-	Avatar,
+	ListItemIcon,
 } from '@mui/material';
 import React from 'react';
 import {notificationPanelWidth} from '../../constants/drawerWidth';
 import ACTIVITIES from '../../mockData/activities.json';
-import NOTIFICATIONS from '../../mockData/notifications.json';
 import {ContactsList} from '../../mockData/contactsList';
+import {Notification} from '../../mockData/notifications';
 
 const NotificationPanel = ({
 	isOpen,
-	notifications = NOTIFICATIONS,
+	notifications = Notification,
 	activities = ACTIVITIES,
 	contacts = ContactsList,
 }) => {
@@ -48,9 +48,10 @@ const NotificationPanel = ({
 						key={notification.id}
 						alignItems="flex-start"
 					>
+						<ListItemAvatar>{notification.icon}</ListItemAvatar>
 						<ListItemText
 							primary={notification.message}
-							secondary={new Date(notification.timestamp).toLocaleString()}
+							secondary={notification.timestamp}
 						/>
 					</ListItem>
 				))}

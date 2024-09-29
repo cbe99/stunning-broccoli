@@ -1,23 +1,23 @@
 [
 	{
-		"message": "Uploaded a new project: Website Redesign.",
+		"message": "You have a bug that needs immediate attention",
 		"id": 201,
-		"timestamp": "2024-09-25T11:10:20Z",
+		"timestamp": "Just Now",
 		"type": "Project",
 		"user": "John Doe"
 	},
 	{
-		"message": "Subscription renewed for Mobile App Development.",
+		"message": "Released a new version.",
 		"id": 202,
 		"timestamp": "2024-09-24T09:15:40Z",
 		"type": "Subscription",
 		"user": "Jane Smith"
 	},
 	{
-		"message": "New user registered: Mark Johnson.",
+		"message": "Submitted a bug",
 		"id": 203,
 		"timestamp": "2024-09-23T15:05:30Z",
-		"type": "New User",
+		"type": "Bug",
 		"user": "Mark Johnson"
 	},
 	{
