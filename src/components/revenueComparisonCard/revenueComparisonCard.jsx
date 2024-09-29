@@ -9,13 +9,17 @@ const formatYAxis = (value) => {
 	return `${value / 1e6}M`;
 };
 
+const formatXAxis = (value) => {
+	return monthNames[value - 1];
+};
+
 function CustomAnimatedLine(props) {
 	const {limit, sxBefore, sxAfter, ...other} = props;
 	const {top, bottom, height, left, width} = useDrawingArea();
 	const scale = useXScale();
 	const chartId = useChartId();
 
-	if (limit === undefined) {
+	if (limit === undefined || props.ownerState.id !== '2023Revenue') {
 		return <AnimatedLine {...other} />;
 	}
 
@@ -97,6 +101,7 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 					grid={{horizontal: true}}
 					series={[
 						{
+							id: '2024Revenue',
 							data: revenueByYear.map((item) => item['2024Revenue']),
 							color: '#A8C5DA',
 							showMark: false,
@@ -104,17 +109,19 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 							valueFormatter: (v, i) => `${v}`,
 						},
 						{
+							id: '2023Revenue',
 							data: revenueByYear.map((item) => item['2023Revenue']),
 							type: 'line',
 							color: '#1C1C1C',
 							showMark: false,
 							valueFormatter: (v, i) =>
-								i.dataIndex > 3 ? `${v} (estimated)` : `${v}`,
+								i.dataIndex > 4 ? `${v} (estimated)` : `${v}`,
 						},
 					]}
 					xAxis={[
 						{
-							data: monthNames,
+							valueFormatter: (value) => formatXAxis(value),
+							data: [1, 2, 3, 4, 5, 6],
 							scaleType: 'point',
 						},
 					]}
@@ -128,8 +135,8 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 					slots={{line: CustomAnimatedLine}}
 					slotProps={{
 						line: {
-							limit: 3,
-							sxAfter: {strokeDasharray: '10 5'},
+							limit: 4,
+							sxAfter: {strokeDasharray: '10 3'},
 						},
 					}}
 				/>
