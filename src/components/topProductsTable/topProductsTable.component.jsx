@@ -16,7 +16,7 @@ const TopProductsTable = ({topProducts}) => {
 	return (
 		<Card>
 			<CardContent>
-				<Typography variant="h5">Top Selling Products</Typography>
+				<Typography variant="h6">Top Selling Products</Typography>
 				<Table>
 					<TableHead>
 						<TableRow>

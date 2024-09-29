@@ -102,7 +102,14 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 				},
 			}}
 		>
-			<Box sx={{marginTop: 2, display: 'flex', flexDirection: 'row'}}>
+			<Box
+				sx={{
+					marginTop: 2,
+					marginLeft: 2,
+					display: 'flex',
+					flexDirection: 'row',
+				}}
+			>
 				<Avatar sx={{width: '24px', height: '24px', marginRight: 2}}>
 					<ByeWindSvg />
 				</Avatar>

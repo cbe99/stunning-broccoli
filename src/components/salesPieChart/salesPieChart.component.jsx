@@ -13,7 +13,7 @@ const SalesPieChart = ({salesData}) => {
 	return (
 		<Card sx={{height: '100%'}}>
 			<CardContent>
-				<Typography variant="h5">Total Sales</Typography>
+				<Typography variant="h6">Total Sales</Typography>
 
 				<PieChart
 					series={[
