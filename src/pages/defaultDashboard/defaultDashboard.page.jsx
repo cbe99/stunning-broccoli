@@ -19,7 +19,7 @@ const DefaultDashboardPage = () => {
 	const navigate = useNavigate();
 
 	return (
-		<Box sx={{flexGrow: 1, width: '100%'}}>
+		<Box sx={{flexGrow: 1, width: '100%', paddingX: 2}}>
 			<Grid
 				container
 				spacing={2}

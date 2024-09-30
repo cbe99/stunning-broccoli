@@ -1,15 +1,12 @@
 import React from 'react';
-import {
-	Toolbar,
-	IconButton,
-	Typography,
-	FormControl,
-	OutlinedInput,
-	InputAdornment,
-} from '@mui/material';
+import {Toolbar, IconButton, Typography, InputAdornment} from '@mui/material';
 import {useLocation} from 'react-router-dom';
-import {AppBar} from './header.styled';
-import {useTheme} from '@emotion/react';
+import {
+	AppBar,
+	NotificationCollapseButton,
+	SearchBar,
+	StyledFormControl,
+} from './header.styled';
 import CollapseIconSvg from '../../assets/collapseIcon';
 import FavouritesIconSvg from '../../assets/favouritesIcon';
 import SunnyIconSvg from '../../assets/sunnyIcon';
@@ -30,7 +27,6 @@ const Header = ({
 	isFavorite,
 }) => {
 	const location = useLocation();
-	const theme = useTheme();
 	const pathnames = location.pathname.split('/').filter((x) => x);
 
 	return (
@@ -38,12 +34,6 @@ const Header = ({
 			position="fixed"
 			openLeft={isSidebarOpen}
 			openRight={isNotificationPanelOpen}
-			sx={{
-				zIndex: 0,
-				backgroundColor: theme.palette.primary.light,
-				boxShadow: 'none',
-				borderBottom: `1px solid rgba(28,28,28,0.1)`,
-			}}
 		>
 			<Toolbar>
 				<IconButton
@@ -55,10 +45,7 @@ const Header = ({
 				>
 					<CollapseIconSvg />
 				</IconButton>
-				<IconButton
-					color="inherit"
-					//	onClick={toggleFavorite}
-				>
+				<IconButton color="inherit">
 					<FavouritesIconSvg color={isFavorite ? 'secondary' : 'inherit'} />
 				</IconButton>
 				<Typography
@@ -76,11 +63,8 @@ const Header = ({
 					))}
 				</Typography>
 
-				<FormControl
-					sx={{m: 1, borderRadius: '8px', border: 'none', padding: '8px'}}
-					variant="standard"
-				>
-					<OutlinedInput
+				<StyledFormControl variant="standard">
+					<SearchBar
 						startAdornment={
 							<InputAdornment position="start">
 								<SearchIconSvg color={isDarkMode ? 'white' : 'inherit'} />
@@ -93,14 +77,11 @@ const Header = ({
 						}
 						placeholder="Search"
 						size="small"
-						sx={{
-							borderRadius: '8px',
-							backgroundColor: (theme) => theme.palette.primary.light,
-						}}
 					/>
-				</FormControl>
+				</StyledFormControl>
 
 				<IconButton
+					sx={{padding: 1}}
 					color="inherit"
 					onClick={toggleDarkMode}
 				>
@@ -112,15 +93,14 @@ const Header = ({
 				<IconButton color="inherit">
 					<AlertIconSvg />
 				</IconButton>
-				<IconButton
+				<NotificationCollapseButton
 					color="inherit"
 					aria-label="open drawer"
 					edge="start"
 					onClick={toggleNotificationPanel}
-					sx={{marginLeft: 1, marginRight: 2}}
 				>
 					<CollapseIconSvg />
-				</IconButton>
+				</NotificationCollapseButton>
 			</Toolbar>
 		</AppBar>
 	);

@@ -149,7 +149,7 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 							type: 'line',
 							color: isDarkTheme
 								? theme.palette.purple.main
-								: theme.palette.secondary.main,
+								: theme.palette.primary.dark,
 							showMark: false,
 							valueFormatter: (v, i) =>
 								i.dataIndex > 4 ? `${v} (estimated)` : `${v}`,

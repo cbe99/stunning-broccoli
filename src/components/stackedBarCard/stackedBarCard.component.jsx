@@ -41,7 +41,7 @@ const StackedBarCard = ({data}) => {
 						},
 					]}
 					colors={[theme.palette.primary.main, theme.palette.secondary.main]}
-					height={400}
+					height={230}
 					borderRadius={10}
 				/>
 			</CardContent>

@@ -12,4 +12,5 @@ export const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
     '& .MuiDataGrid-footer': {
         borderTop: 'none',
     },
+    fontSize: '12px'
 }))

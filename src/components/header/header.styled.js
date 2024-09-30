@@ -1,6 +1,6 @@
-import { styled } from "@mui/material";
+import { FormControl, IconButton, OutlinedInput, styled } from "@mui/material";
 import MuiAppBar from '@mui/material/AppBar';
-import { drawerWidth, notificationPanelWidth, sidebarWidth } from "../../constants/drawerWidth";
+import { notificationPanelWidth, sidebarWidth } from "../../constants/drawerWidth";
 
 
 export const AppBar = styled(MuiAppBar, {
@@ -27,14 +27,17 @@ export const AppBar = styled(MuiAppBar, {
     }
 
     return {
-        zIndex: theme.zIndex.drawer + 1,
         width,
         marginLeft,
         marginRight,
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
+        // transition: theme.transitions.create(['margin', 'width'], {
+        //     easing: theme.transitions.easing.easeOut,
+        //     duration: theme.transitions.duration.enteringScreen,
+        // }),
+        zIndex: 1,
+        backgroundColor: theme.palette.primary.light,
+        boxShadow: 'none',
+        borderBottom: `1px solid rgba(28,28,28,0.1)`,
     };
 });
 
@@ -46,3 +49,17 @@ export const DrawerHeader = styled('div')(({ theme }) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
 }));
+
+export const StyledFormControl = styled(FormControl)({
+    m: 1, borderRadius: '8px', border: 'none', padding: '8px', borderColor: 'transparent'
+})
+
+export const SearchBar = styled(OutlinedInput)(({ theme }) => ({
+    borderRadius: '8px',
+    backgroundColor: theme.palette.primary.light,
+}))
+
+export const NotificationCollapseButton = styled(IconButton)(({ theme }) => ({
+    marginLeft: theme.spacing(1), marginRight: theme.spacing(2),
+    padding: theme.spacing(1)
+}))

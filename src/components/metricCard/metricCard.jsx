@@ -34,7 +34,7 @@ const MetricCard = ({type, number, change, currency, unit, color}) => {
 			elevation={0}
 			sx={{
 				backgroundColor: cardBgColor[color],
-				color: 'white',
+				//color: 'white',
 				mb: 2,
 				height: '100%',
 				width: '100%',

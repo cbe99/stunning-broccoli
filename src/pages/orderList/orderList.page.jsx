@@ -2,14 +2,13 @@ import {
 	Avatar,
 	Box,
 	FormControl,
+	Grid2,
 	IconButton,
 	InputAdornment,
-	InputBase,
 	OutlinedInput,
 	Paper,
 	Typography,
 } from '@mui/material';
-import {DataGrid, GridToolbar} from '@mui/x-data-grid';
 import React from 'react';
 import {OrderList} from '../../mockData/orderList';
 import {StyledDataGrid} from './orderList.styled';
@@ -86,27 +85,28 @@ const OrderListPage = () => {
 		{
 			field: 'user',
 			headerName: 'User',
-			width: 214,
+			width: 180,
 			editable: false,
 			renderCell: (params) => getUser(params.row),
 		},
 		{
 			field: 'project',
 			headerName: 'Project',
-			width: 214,
+			width: 150,
 			editable: false,
 		},
 		{
 			field: 'address',
 			headerName: 'Address',
-			width: 270,
+			width: 150,
 			editable: false,
 		},
 		{
 			field: 'date',
 			headerName: 'Date',
-			width: 191,
+			width: 150,
 			editable: false,
+			flex: 1,
 		},
 		{
 			field: 'status',
@@ -118,71 +118,73 @@ const OrderListPage = () => {
 	];
 
 	return (
-		<Box
-			sx={{
-				height: '100%',
-				width: '100%',
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'flex-start',
-				alignItems: 'flex-start',
-			}}
-		>
-			<Typography variant="h5">Order List</Typography>
-			<Paper
-				sx={{
-					boxShadow: 'none',
-					width: '100%',
-					display: 'flex',
-					flexDirection: 'row',
-					justifyContent: 'space-between',
-				}}
+		<Box sx={{flexGrow: 1, width: '100%'}}>
+			<Grid2
+				container
+				columns={12}
 			>
-				<Box sx={{m: 1}}>
-					<IconButton>
-						<Add />
-					</IconButton>
-					<IconButton>
-						<SortIconSvg />
-					</IconButton>
-					<IconButton>
-						<ArrangeIconSvg />
-					</IconButton>
-				</Box>
-				<FormControl
-					sx={{m: 1, borderRadius: '8px'}}
-					variant="outlined"
-				>
-					<OutlinedInput
-						startAdornment={
-							<InputAdornment position="start">
-								<Search />
-							</InputAdornment>
-						}
-						placeholder="Search"
-						size="small"
-						sx={{borderRadius: '8px'}}
+				<Grid2 size={12}>
+					<Typography variant="h5">Order List</Typography>
+				</Grid2>
+				<Grid2 size={10}>
+					<Paper
+						sx={{
+							boxShadow: 'none',
+							width: '100%',
+							display: 'flex',
+							flexDirection: 'row',
+							justifyContent: 'space-between',
+						}}
+					>
+						<Box sx={{m: 1}}>
+							<IconButton>
+								<Add />
+							</IconButton>
+							<IconButton>
+								<SortIconSvg />
+							</IconButton>
+							<IconButton>
+								<ArrangeIconSvg />
+							</IconButton>
+						</Box>
+						<FormControl
+							sx={{m: 1, borderRadius: '8px'}}
+							variant="outlined"
+						>
+							<OutlinedInput
+								startAdornment={
+									<InputAdornment position="start">
+										<Search />
+									</InputAdornment>
+								}
+								placeholder="Search"
+								size="small"
+								sx={{borderRadius: '8px'}}
+							/>
+						</FormControl>
+					</Paper>
+				</Grid2>
+				<Grid2 size={10}>
+					<StyledDataGrid
+						density="comfortable"
+						rows={OrderList}
+						columns={columns}
+						initialState={{
+							pagination: {
+								paginationModel: {
+									pageSize: 5,
+								},
+							},
+						}}
+						pageSizeOptions={[5]}
+						checkboxSelection
+						disableColumnFilter
+						disableColumnMenu
+						disableColumnSorting
+						disableRowSelectionOnClick
 					/>
-				</FormControl>
-			</Paper>
-			<StyledDataGrid
-				density="comfortable"
-				rows={OrderList}
-				columns={columns}
-				initialState={{
-					pagination: {
-						paginationModel: {
-							pageSize: 5,
-						},
-					},
-				}}
-				pageSizeOptions={[5]}
-				checkboxSelection
-				disableColumnFilter
-				disableColumnMenu
-				disableColumnSorting
-				disableRowSelectionOnClick
-			/>
+				</Grid2>
+			</Grid2>
 		</Box>
 	);
 };
