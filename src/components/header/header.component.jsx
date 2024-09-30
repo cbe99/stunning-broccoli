@@ -3,14 +3,12 @@ import {
 	Toolbar,
 	IconButton,
 	Typography,
-	Switch,
 	FormControl,
 	OutlinedInput,
 	InputAdornment,
 } from '@mui/material';
-import {Menu, Favorite, WbSunny, NightsStay, Search} from '@mui/icons-material';
 import {useLocation} from 'react-router-dom';
-import {AppBar, DrawerHeader} from './header.styled';
+import {AppBar} from './header.styled';
 import {useTheme} from '@emotion/react';
 import CollapseIconSvg from '../../assets/collapseIcon';
 import FavouritesIconSvg from '../../assets/favouritesIcon';
@@ -18,6 +16,7 @@ import SunnyIconSvg from '../../assets/sunnyIcon';
 import HistoryIconSvg from '../../assets/historyIcon';
 import AlertIconSvg from '../../assets/alertIcon';
 import CommandIconSvg from '../../assets/commandIcon';
+import SearchIconSvg from '../../assets/searchIcon';
 
 const Header = ({
 	toggleSidebar,
@@ -84,12 +83,12 @@ const Header = ({
 					<OutlinedInput
 						startAdornment={
 							<InputAdornment position="start">
-								<Search color="inherit" />
+								<SearchIconSvg color={isDarkMode ? 'white' : 'inherit'} />
 							</InputAdornment>
 						}
 						endAdornment={
 							<InputAdornment position="end">
-								<CommandIconSvg />
+								<CommandIconSvg color={isDarkMode ? 'white' : 'inherit'} />
 							</InputAdornment>
 						}
 						placeholder="Search"

@@ -1,25 +1,18 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Sidebar from './components/sidebar';
-import {createTheme, CssBaseline, ThemeProvider, Toolbar} from '@mui/material';
+import {CssBaseline, ThemeProvider, Toolbar} from '@mui/material';
 import Header from './components/header';
 import NotificationPanel from './components/notificationPanel';
 import {Main} from './App.styled';
 import AppRoutes from './router';
 import getTheme from './themes/getTheme';
-import {light} from '@mui/material/styles/createPalette';
 
 const App = () => {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 	const [isNotificationPanelOpen, setIsNotificationPanelOpen] = useState(true);
 	const [favorites, setFavorites] = useState([]);
-
-	const darkTheme = createTheme({
-		palette: {
-			mode: 'dark',
-		},
-	});
 
 	const toggleDarkMode = () => {
 		setIsDarkMode(!isDarkMode);

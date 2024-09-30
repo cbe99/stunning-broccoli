@@ -53,8 +53,8 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 						sx={{pl: 2}}
 					>
 						{Icon ? (
-							<ListItemIcon color={theme.palette.primary.dark}>
-								<Icon color={'green'} />
+							<ListItemIcon>
+								<Icon color={isDarkMode ? 'white' : 'inherit'} />
 							</ListItemIcon>
 						) : (
 							<Box
@@ -95,8 +95,8 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 					sx={{pl: 2}}
 				>
 					{Icon ? (
-						<ListItemIcon color>
-							<Icon />
+						<ListItemIcon>
+							<Icon color={isDarkMode ? 'white' : 'inherit'} />
 						</ListItemIcon>
 					) : (
 						<Box
