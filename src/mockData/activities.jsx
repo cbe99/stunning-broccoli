@@ -16,7 +16,7 @@ export const Activities = [
 	{
 		message: 'Released a new version.',
 		id: 202,
-		timestamp: '2024-09-24T09:15:40Z',
+		timestamp: '59 minutes ago',
 		type: 'Subscription',
 		user: 'Jane Smith',
 		icon: <KorayOkumusSvg />,
@@ -24,7 +24,7 @@ export const Activities = [
 	{
 		message: 'Submitted a bug',
 		id: 203,
-		timestamp: '2024-09-23T15:05:30Z',
+		timestamp: '12 hours ago',
 		type: 'Bug',
 		user: 'Mark Johnson',
 		icon: <NatalieCraigSvg />,
@@ -32,7 +32,7 @@ export const Activities = [
 	{
 		message: 'Modified data in Page X',
 		id: 204,
-		timestamp: '2024-09-22T10:40:25Z',
+		timestamp: 'Today, 11:59 AM',
 		type: 'Bug Fix',
 		user: 'Emily Brown',
 		icon: <OrlandoDiggsSvg />,
@@ -40,7 +40,7 @@ export const Activities = [
 	{
 		message: 'Deleted a page in Project X',
 		id: 205,
-		timestamp: '2024-09-21T08:20:10Z',
+		timestamp: 'Feb 2, 2023',
 		type: 'Project',
 		user: 'Michael Clark',
 		icon: <AndieLaneSvg />,
