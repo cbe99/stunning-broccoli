@@ -1,15 +1,25 @@
-import {Box, Card, CardContent, styled, Typography} from '@mui/material';
+import {Box, Card, CardContent, Typography, useTheme} from '@mui/material';
 import {PieChart} from '@mui/x-charts';
 import React from 'react';
 
 const SalesPieChart = ({salesData}) => {
+	const theme = useTheme(); // Get the current theme
 	const pieData = salesData?.map((item) => ({
 		id: item.company,
 		value: item.sales,
 	}));
+
 	const formatSale = (salesValue) => {
 		return `$${salesValue}`;
 	};
+
+	const lightModeColors = ['#1C1C1C', '#BAEDBD', '#B1E3FF', '#95A4FC'];
+
+	const darkModeColors = ['#C6C7F8', '#BAEDBD', '#95A4FC', '#B1E3FF'];
+
+	const customColors =
+		theme.palette.mode === 'dark' ? darkModeColors : lightModeColors;
+
 	return (
 		<Card
 			elevation={0}
@@ -22,6 +32,7 @@ const SalesPieChart = ({salesData}) => {
 				<Typography variant="h5">Total Sales</Typography>
 
 				<PieChart
+					colors={customColors}
 					series={[
 						{
 							data: pieData,
@@ -31,7 +42,7 @@ const SalesPieChart = ({salesData}) => {
 							innerRadius: 45,
 							outerRadius: 80,
 							cornerRadius: 10,
-							arcLabel: (params) => params.label ?? '',
+							arcLabel: (params) => (params.company ? params.company : ''),
 							arcLabelMinAngle: 20,
 						},
 					]}
@@ -54,7 +65,6 @@ const SalesPieChart = ({salesData}) => {
 								display: 'flex',
 								flexDirection: 'row',
 								justifyContent: 'flex-start',
-								//	padding: 1,
 							}}
 						>
 							<Box
@@ -62,7 +72,7 @@ const SalesPieChart = ({salesData}) => {
 									width: 6,
 									height: 6,
 									borderRadius: '50%',
-									backgroundColor: 'black',
+									backgroundColor: customColors[i % customColors.length],
 									marginRight: 1,
 									marginTop: 1,
 								}}
