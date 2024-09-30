@@ -3,7 +3,7 @@ import {PieChart} from '@mui/x-charts';
 import React from 'react';
 
 const SalesPieChart = ({salesData}) => {
-	const theme = useTheme(); // Get the current theme
+	const theme = useTheme();
 	const pieData = salesData?.map((item) => ({
 		id: item.company,
 		value: item.sales,

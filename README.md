@@ -4,7 +4,7 @@ E-Buy Application Dashboard
 
 # Deployed Link
 
-https://stunning-broccoli-eight.vercel.app/default
+https://stunning-broccoli-eight.vercel.app
 
 # Packages Used
 

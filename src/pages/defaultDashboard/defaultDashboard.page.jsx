@@ -39,7 +39,7 @@ const DefaultDashboardPage = () => {
 				>
 					<Grid
 						container
-						size={8}
+						size={{xs: 12, md: 8}}
 						sx={{
 							display: 'flex',
 							flexDirection: 'row',
@@ -50,7 +50,7 @@ const DefaultDashboardPage = () => {
 					>
 						{METRICS.map((metric) => (
 							<Grid
-								size={6}
+								size={{xs: 12, md: 6}}
 								spacing={2}
 								key={metric.type}
 								onClick={() => navigate(`/default/${metric.path}`)}
@@ -60,7 +60,7 @@ const DefaultDashboardPage = () => {
 						))}
 					</Grid>
 					<Grid
-						size={4}
+						size={{xs: 12, md: 4}}
 						//	sx={{width: '432px', height: '352px'}}
 					>
 						<StackedBarCard data={ProjectionsVsActuals} />
@@ -70,10 +70,10 @@ const DefaultDashboardPage = () => {
 					container
 					size={12}
 				>
-					<Grid size={8}>
+					<Grid size={{xs: 12, md: 8}}>
 						<RevenueComparisonChart revenueByYear={REVENUE_BY_YEAR} />
 					</Grid>
-					<Grid size={4}>
+					<Grid size={{xs: 12, md: 4}}>
 						<RevenueLocationCard revenueDetails={REVENUE_BY_LOCATION} />
 					</Grid>
 				</Grid>
@@ -81,10 +81,10 @@ const DefaultDashboardPage = () => {
 					container
 					size={12}
 				>
-					<Grid size={8}>
+					<Grid size={{xs: 12, md: 8}}>
 						<TopProductsTable topProducts={TOP_PRODUCTS} />
 					</Grid>
-					<Grid size={4}>
+					<Grid size={{xs: 12, md: 4}}>
 						<SalesPieChart salesData={TOTAL_SALES_DATA} />
 					</Grid>
 				</Grid>

@@ -1,18 +1,10 @@
-import {ArrowDownward, ArrowUpward} from '@mui/icons-material';
-import {
-	Box,
-	Card,
-	CardContent,
-	CardHeader,
-	Grid2,
-	Typography,
-	useTheme,
-} from '@mui/material';
+import {CardContent, Grid2, Typography, useTheme} from '@mui/material';
 import React from 'react';
 import ArrowUpIconSvg from '../../assets/arrowUpIcon';
 import ArrowDownIconSvg from '../../assets/arrowDownIcon';
 import {ParentCard} from './metricCard.styled';
 
+// Card showcasing metrics data as per mock data
 const MetricCard = ({type, number, change, currency, unit, color}) => {
 	const theme = useTheme();
 	const isDarkTheme = theme.palette.mode === 'dark';

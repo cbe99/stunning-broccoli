@@ -11,6 +11,8 @@ import {
 } from '@mui/material';
 import {ParentCard, StyledBox} from './revenueComparisonCard.styled';
 
+// line chart card - compares revenue
+
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
 
 const formatYAxis = (value) => {

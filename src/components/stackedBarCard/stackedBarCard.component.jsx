@@ -2,6 +2,7 @@ import React from 'react';
 import {Card, CardContent, Typography, useTheme} from '@mui/material';
 import {BarChart} from '@mui/x-charts';
 
+// comparative stacks for projected vs actual data
 const StackedBarCard = ({data}) => {
 	const theme = useTheme();
 
