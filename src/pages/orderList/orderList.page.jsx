@@ -124,6 +124,7 @@ const OrderListPage = () => {
 		<Box sx={{flexGrow: 1, width: '100%'}}>
 			<Grid2
 				container
+				spacing={2}
 				columns={12}
 			>
 				<Grid2 size={12}>

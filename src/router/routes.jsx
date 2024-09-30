@@ -1,5 +1,5 @@
 import React, {Suspense, lazy} from 'react';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, Navigate} from 'react-router-dom';
 import {PATHS} from '../constants/path';
 import METRICS from '../mockData/eCommerceMetrics.json';
 
@@ -75,8 +75,11 @@ const AppRoutes = () => {
 	return (
 		<Suspense fallback={<div>Loading...</div>}>
 			<Routes>
+				<Route
+					path="/"
+					element={<Navigate to={'/default'} />}
+				/>
 				{generateRoutes(PATHS.flatMap((pathGroup) => pathGroup.items))}
-
 				{generateMetricRoutes()}
 			</Routes>
 		</Suspense>
