@@ -9,6 +9,7 @@ import {
 	Typography,
 	useTheme,
 } from '@mui/material';
+import {ParentCard, StyledBox} from './revenueComparisonCard.styled';
 
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
 
@@ -77,23 +78,20 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 	const isDarkTheme = theme.palette.mode === 'dark';
 
 	return (
-		<Card
+		<ParentCard
 			elevation={0}
 			sx={{
-				height: 400,
-				p: 2,
 				backgroundColor: (theme) => theme.palette.primary.light,
 			}}
 		>
 			<CardContent>
-				<Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
+				<StyledBox>
 					<Typography
 						variant="h5"
 						gutterBottom
 					>
 						Revenue
 					</Typography>
-					{/* Divider with flexGrow to fill the space */}
 
 					<Divider
 						orientation="vertical"
@@ -128,7 +126,7 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 						}}
 					/>
 					<Typography variant="body1">2023 Revenue</Typography>
-				</Box>
+				</StyledBox>
 
 				<LineChart
 					//width={600}
@@ -178,7 +176,7 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 					}}
 				/>
 			</CardContent>
-		</Card>
+		</ParentCard>
 	);
 };
 

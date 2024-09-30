@@ -1,19 +1,15 @@
 import {
-	Drawer,
 	List,
 	ListItem,
 	ListItemText,
-	Divider,
 	Typography,
 	ListItemAvatar,
-	ListItemIcon,
-	useTheme,
 } from '@mui/material';
 import React from 'react';
-import {notificationPanelWidth} from '../../constants/drawerWidth';
 import {ContactsList} from '../../mockData/contactsList';
 import {Notification} from '../../mockData/notifications';
 import {Activities} from '../../mockData/activities';
+import {StyledDrawer} from './notificationPanel.styled';
 
 const NotificationPanel = ({
 	isOpen,
@@ -21,24 +17,11 @@ const NotificationPanel = ({
 	activities = Activities,
 	contacts = ContactsList,
 }) => {
-	const theme = useTheme();
 	return (
-		<Drawer
+		<StyledDrawer
 			variant="persistent"
 			anchor="right"
 			open={isOpen}
-			sx={{
-				width: notificationPanelWidth,
-				flexShrink: 0,
-				'& .MuiDrawer-paper': {
-					width: notificationPanelWidth,
-					boxSizing: 'border-box',
-					padding: 2,
-					paddingTop: 3,
-					borderLeft: `1px solid ${theme.palette.primary.light}`,
-				},
-				zIndex: 0,
-			}}
 		>
 			{/* Notifications Section */}
 			<Typography
@@ -110,7 +93,7 @@ const NotificationPanel = ({
 					</ListItem>
 				))}
 			</List>
-		</Drawer>
+		</StyledDrawer>
 	);
 };
 

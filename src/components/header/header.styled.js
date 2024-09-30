@@ -1,6 +1,6 @@
 import { FormControl, IconButton, OutlinedInput, styled } from "@mui/material";
 import MuiAppBar from '@mui/material/AppBar';
-import { notificationPanelWidth, sidebarWidth } from "../../constants/drawerWidth";
+import { NOTIFICATION_PANEL_WIDTH, SIDEBAR_WIDTH } from "../../constants/drawerWidth";
 
 
 export const AppBar = styled(MuiAppBar, {
@@ -13,27 +13,27 @@ export const AppBar = styled(MuiAppBar, {
 
     if (openLeft && openRight) {
         // Both drawers are open, reduce width by both sidebar and notification panel widths
-        width = `calc(100% - ${sidebarWidth + notificationPanelWidth}px)`;
-        marginLeft = sidebarWidth;
-        marginRight = notificationPanelWidth;
+        width = `calc(100% - ${SIDEBAR_WIDTH + NOTIFICATION_PANEL_WIDTH}px)`;
+        marginLeft = SIDEBAR_WIDTH;
+        marginRight = NOTIFICATION_PANEL_WIDTH;
     } else if (openLeft) {
         // Only the left sidebar is open
-        width = `calc(100% - ${sidebarWidth}px)`;
-        marginLeft = sidebarWidth;
+        width = `calc(100% - ${SIDEBAR_WIDTH}px)`;
+        marginLeft = SIDEBAR_WIDTH;
     } else if (openRight) {
         // Only the right notification panel is open
-        width = `calc(100% - ${notificationPanelWidth}px)`;
-        marginRight = notificationPanelWidth;
+        width = `calc(100% - ${NOTIFICATION_PANEL_WIDTH}px)`;
+        marginRight = NOTIFICATION_PANEL_WIDTH;
     }
 
     return {
         width,
         marginLeft,
         marginRight,
-        // transition: theme.transitions.create(['margin', 'width'], {
-        //     easing: theme.transitions.easing.easeOut,
-        //     duration: theme.transitions.duration.enteringScreen,
-        // }),
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
         zIndex: 1,
         backgroundColor: theme.palette.primary.light,
         boxShadow: 'none',

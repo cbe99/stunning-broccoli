@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import {Link, useLocation} from 'react-router-dom';
 import {ExpandLess, ExpandMore} from '@mui/icons-material';
-import {sidebarWidth} from '../../constants/drawerWidth';
+import {SIDEBAR_WIDTH} from '../../constants/drawerWidth';
 import {PATHS} from '../../constants/path';
 import ByeWindSvg from '../../assets/profiles/bye-wind';
 
@@ -122,10 +122,10 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 			anchor="left"
 			open={isOpen}
 			sx={{
-				width: sidebarWidth,
+				width: SIDEBAR_WIDTH,
 				flexShrink: 0,
 				'& .MuiDrawer-paper': {
-					width: sidebarWidth,
+					width: SIDEBAR_WIDTH,
 					boxSizing: 'border-box',
 					paddingTop: 1,
 					borderRight: `1px solid ${theme.palette.primary.light}`,
@@ -143,7 +143,12 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 				<Avatar sx={{width: '24px', height: '24px', marginRight: 2}}>
 					<ByeWindSvg />
 				</Avatar>
-				<Typography>Bye Wind</Typography>
+				<Typography
+					sx={{marginTop: 0.5}}
+					variant="body1"
+				>
+					Bye Wind
+				</Typography>
 			</Box>
 			<List>
 				{PATHS.map((section) => (

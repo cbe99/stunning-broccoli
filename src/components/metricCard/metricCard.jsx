@@ -11,6 +11,7 @@ import {
 import React from 'react';
 import ArrowUpIconSvg from '../../assets/arrowUpIcon';
 import ArrowDownIconSvg from '../../assets/arrowDownIcon';
+import {ParentCard} from './metricCard.styled';
 
 const MetricCard = ({type, number, change, currency, unit, color}) => {
 	const theme = useTheme();
@@ -30,14 +31,10 @@ const MetricCard = ({type, number, change, currency, unit, color}) => {
 	};
 
 	return (
-		<Card
+		<ParentCard
 			elevation={0}
 			sx={{
 				backgroundColor: cardBgColor[color],
-				//color: 'white',
-				mb: 2,
-				height: '100%',
-				width: '100%',
 			}}
 		>
 			<CardContent>
@@ -82,7 +79,7 @@ const MetricCard = ({type, number, change, currency, unit, color}) => {
 					</Typography>
 				</Grid2>
 			</CardContent>
-		</Card>
+		</ParentCard>
 	);
 };
 

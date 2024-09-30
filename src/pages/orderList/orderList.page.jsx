@@ -88,18 +88,21 @@ const OrderListPage = () => {
 			width: 180,
 			editable: false,
 			renderCell: (params) => getUser(params.row),
+			flex: 1,
 		},
 		{
 			field: 'project',
 			headerName: 'Project',
 			width: 150,
 			editable: false,
+			flex: 1,
 		},
 		{
 			field: 'address',
 			headerName: 'Address',
 			width: 150,
 			editable: false,
+			flex: 1,
 		},
 		{
 			field: 'date',
@@ -126,7 +129,7 @@ const OrderListPage = () => {
 				<Grid2 size={12}>
 					<Typography variant="h5">Order List</Typography>
 				</Grid2>
-				<Grid2 size={10}>
+				<Grid2 size={11}>
 					<Paper
 						sx={{
 							boxShadow: 'none',
@@ -164,7 +167,7 @@ const OrderListPage = () => {
 						</FormControl>
 					</Paper>
 				</Grid2>
-				<Grid2 size={10}>
+				<Grid2 size={11}>
 					<StyledDataGrid
 						density="comfortable"
 						rows={OrderList}

@@ -1,3 +1,2 @@
-export const drawerWidth = 212;
-export const sidebarWidth = 212;
-export const notificationPanelWidth = 260;
+export const SIDEBAR_WIDTH = 212;
+export const NOTIFICATION_PANEL_WIDTH = 260;

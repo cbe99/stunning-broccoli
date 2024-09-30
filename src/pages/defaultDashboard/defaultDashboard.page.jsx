@@ -51,6 +51,7 @@ const DefaultDashboardPage = () => {
 						{METRICS.map((metric) => (
 							<Grid
 								size={6}
+								spacing={2}
 								key={metric.type}
 								onClick={() => navigate(`/default/${metric.path}`)}
 							>
