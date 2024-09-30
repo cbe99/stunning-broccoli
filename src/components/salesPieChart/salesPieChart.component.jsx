@@ -11,9 +11,15 @@ const SalesPieChart = ({salesData}) => {
 		return `$${salesValue}`;
 	};
 	return (
-		<Card sx={{height: '100%'}}>
+		<Card
+			elevation={0}
+			sx={{
+				height: '100%',
+				backgroundColor: (theme) => theme.palette.primary.light,
+			}}
+		>
 			<CardContent>
-				<Typography variant="h6">Total Sales</Typography>
+				<Typography variant="h5">Total Sales</Typography>
 
 				<PieChart
 					series={[

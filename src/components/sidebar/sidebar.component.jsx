@@ -1,4 +1,3 @@
-// src/components/Sidebar.js
 import React, {useState} from 'react';
 import {
 	Drawer,
@@ -11,9 +10,11 @@ import {
 	Avatar,
 	Toolbar,
 	Typography,
+	ListItemButton,
+	useTheme,
 } from '@mui/material';
 import {Link, useLocation} from 'react-router-dom';
-import {ExpandLess, ExpandMore, StarBorder} from '@mui/icons-material';
+import {ExpandLess, ExpandMore} from '@mui/icons-material';
 import {sidebarWidth} from '../../constants/drawerWidth';
 import {PATHS} from '../../constants/path';
 import ByeWindSvg from '../../assets/profiles/bye-wind';
@@ -21,18 +22,24 @@ import ByeWindSvg from '../../assets/profiles/bye-wind';
 const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 	const [open, setOpen] = useState({});
 	const location = useLocation();
+	const theme = useTheme();
 
 	const handleClick = (itemName) => {
 		setOpen((prevState) => ({...prevState, [itemName]: !prevState[itemName]}));
 	};
 
-	const ListItemLink = (props) => {
+	const ListItemLink = ({to, children, ...props}) => {
+		const isSelected = location.pathname === to;
+
 		return (
-			<ListItem
-				button
+			<ListItemButton
 				component={Link}
+				to={to}
+				selected={isSelected}
 				{...props}
-			/>
+			>
+				{children}
+			</ListItemButton>
 		);
 	};
 
@@ -41,14 +48,13 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 		if (item.subitems) {
 			return (
 				<React.Fragment key={item.name}>
-					<ListItem
-						button
+					<ListItemButton
 						onClick={() => handleClick(item.name)}
 						sx={{pl: 2}}
 					>
 						{Icon ? (
-							<ListItemIcon>
-								<Icon />
+							<ListItemIcon color={theme.palette.primary.dark}>
+								<Icon color={'green'} />
 							</ListItemIcon>
 						) : (
 							<Box
@@ -64,7 +70,7 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 						)}
 						<ListItemText primary={item.name} />
 						{open[item.name] ? <ExpandLess /> : <ExpandMore />}
-					</ListItem>
+					</ListItemButton>
 					<Collapse
 						in={open[item.name]}
 						timeout="auto"
@@ -89,7 +95,7 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 					sx={{pl: 2}}
 				>
 					{Icon ? (
-						<ListItemIcon>
+						<ListItemIcon color>
 							<Icon />
 						</ListItemIcon>
 					) : (
@@ -121,6 +127,8 @@ const Sidebar = ({isDarkMode, isOpen, favorites}) => {
 				'& .MuiDrawer-paper': {
 					width: sidebarWidth,
 					boxSizing: 'border-box',
+					paddingTop: 1,
+					borderRight: `1px solid ${theme.palette.primary.light}`,
 				},
 			}}
 		>

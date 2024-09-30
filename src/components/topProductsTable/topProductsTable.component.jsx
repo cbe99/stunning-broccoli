@@ -14,9 +14,12 @@ import React from 'react';
 
 const TopProductsTable = ({topProducts}) => {
 	return (
-		<Card>
+		<Card
+			elevation={0}
+			sx={{backgroundColor: (theme) => theme.palette.primary.light}}
+		>
 			<CardContent>
-				<Typography variant="h6">Top Selling Products</Typography>
+				<Typography variant="h5">Top Selling Products</Typography>
 				<Table>
 					<TableHead>
 						<TableRow>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardContent, Typography} from '@mui/material';
+import {Card, CardContent, Typography, useTheme} from '@mui/material';
 import {
 	BarChart,
 	Bar,
@@ -44,7 +44,6 @@ const projectionsVsActuals = [
 	},
 ];
 
-// Custom Bar Shape
 const CustomBar = ({fill, x, y, width, height, isTop}) => {
 	const radius = 4;
 
@@ -64,11 +63,16 @@ const CustomBar = ({fill, x, y, width, height, isTop}) => {
 };
 
 const StackedBarGraphCard = () => {
+	const theme = useTheme();
+
 	return (
-		<Card sx={{backgroundColor: 'secondary.light', height: '100%'}}>
+		<Card
+			elevation={0}
+			sx={{backgroundColor: theme.palette.primary.light}}
+		>
 			<CardContent>
 				<Typography
-					variant="h6"
+					variant="h5"
 					component="div"
 					gutterBottom
 				>
@@ -103,7 +107,7 @@ const StackedBarGraphCard = () => {
 						dataKey="projection"
 						stackId="a"
 						shape={(props) => <CustomBar {...props} />}
-						fill="#A8C5DA"
+						fill={theme.palette.primary.main}
 						width={20}
 						barSize={20}
 					/>

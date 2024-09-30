@@ -39,7 +39,12 @@ const Header = ({
 			position="fixed"
 			openLeft={isSidebarOpen}
 			openRight={isNotificationPanelOpen}
-			sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}
+			sx={{
+				zIndex: 0,
+				backgroundColor: theme.palette.primary.light,
+				boxShadow: 'none',
+				borderBottom: `1px solid rgba(28,28,28,0.1)`,
+			}}
 		>
 			<Toolbar>
 				<IconButton
@@ -73,8 +78,8 @@ const Header = ({
 				</Typography>
 
 				<FormControl
-					sx={{m: 1, borderRadius: '8px'}}
-					variant="outlined"
+					sx={{m: 1, borderRadius: '8px', border: 'none', padding: '8px'}}
+					variant="standard"
 				>
 					<OutlinedInput
 						startAdornment={
@@ -89,7 +94,10 @@ const Header = ({
 						}
 						placeholder="Search"
 						size="small"
-						sx={{borderRadius: '8px'}}
+						sx={{
+							borderRadius: '8px',
+							backgroundColor: (theme) => theme.palette.primary.light,
+						}}
 					/>
 				</FormControl>
 

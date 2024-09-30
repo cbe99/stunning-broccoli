@@ -39,13 +39,12 @@ const DefaultDashboardPage = () => {
 				>
 					<Grid
 						container
-						size={'auto'}
+						size={8}
 						sx={{
 							display: 'flex',
 							flexDirection: 'row',
-							gap: 2,
+							gap: 1,
 							justifyContent: 'space-between',
-							//	width: '432px',
 							height: '100%',
 						}}
 					>
@@ -60,8 +59,8 @@ const DefaultDashboardPage = () => {
 						))}
 					</Grid>
 					<Grid
-						size={'auto'}
-						sx={{width: '432px', height: '352px'}}
+						size={4}
+						//	sx={{width: '432px', height: '352px'}}
 					>
 						<StackedBarCard data={GROWTH_MARGIN.projectionsVsActuals} />
 					</Grid>

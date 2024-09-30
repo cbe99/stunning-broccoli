@@ -21,7 +21,13 @@ const RevenueLocationCard = ({revenueDetails}) => {
 		return revenue;
 	};
 	return (
-		<Card sx={{height: '100%'}}>
+		<Card
+			elevation={0}
+			sx={{
+				height: '100%',
+				backgroundColor: (theme) => theme.palette.primary.light,
+			}}
+		>
 			<CardContent
 				sx={{
 					display: 'flex',
@@ -30,7 +36,7 @@ const RevenueLocationCard = ({revenueDetails}) => {
 					gap: 1,
 				}}
 			>
-				<Typography variant="h6">Revenue By Location</Typography>
+				<Typography variant="h5">Revenue By Location</Typography>
 				<Box
 					display={'flex'}
 					justifyContent={'center'}

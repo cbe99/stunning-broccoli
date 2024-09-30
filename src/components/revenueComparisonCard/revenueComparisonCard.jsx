@@ -1,7 +1,14 @@
 import React from 'react';
 import {LineChart, AnimatedLine} from '@mui/x-charts/LineChart';
 import {useChartId, useDrawingArea, useXScale} from '@mui/x-charts/hooks';
-import {Box, Card, CardContent, Divider, Typography} from '@mui/material';
+import {
+	Box,
+	Card,
+	CardContent,
+	Divider,
+	Typography,
+	useTheme,
+} from '@mui/material';
 
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
 
@@ -66,12 +73,22 @@ function CustomAnimatedLine(props) {
 }
 
 const RevenueComparisonChart = ({revenueByYear}) => {
+	const theme = useTheme();
+	const isDarkTheme = theme.palette.mode === 'dark';
+
 	return (
-		<Card sx={{height: 400, p: 2}}>
+		<Card
+			elevation={0}
+			sx={{
+				height: 400,
+				p: 2,
+				backgroundColor: (theme) => theme.palette.primary.light,
+			}}
+		>
 			<CardContent>
 				<Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
 					<Typography
-						variant="body1"
+						variant="h5"
 						gutterBottom
 					>
 						Revenue
@@ -85,14 +102,32 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 						sx={{
 							padding: 1,
 							width: '5px',
-							background: '--black-20, #1C1C1C33',
+							background: isDarkTheme
+								? '--white-20, #FFFFFF33'
+								: '--black-20, #1C1C1C33',
 						}}
 					/>
 
-					<Box sx={{width: 20, height: 2, bgcolor: '#A8C5DA', m: 1}} />
-					<Typography variant="body2">2024 Revenue</Typography>
-					<Box sx={{width: 20, height: 2, bgcolor: '#1C1C1C', m: 1}} />
-					<Typography variant="body2">2023 Revenue</Typography>
+					<Box
+						sx={{
+							width: 6,
+							height: 6,
+							bgcolor: (theme) => theme.palette.primary.main,
+							borderRadius: '50%',
+							m: 1,
+						}}
+					/>
+					<Typography variant="body1">2024 Revenue</Typography>
+					<Box
+						sx={{
+							width: 6,
+							height: 6,
+							bgcolor: (theme) => theme.palette.text.primary,
+							borderRadius: '50%',
+							m: 1,
+						}}
+					/>
+					<Typography variant="body1">2023 Revenue</Typography>
 				</Box>
 
 				<LineChart
@@ -103,7 +138,7 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 						{
 							id: '2024Revenue',
 							data: revenueByYear.map((item) => item['2024Revenue']),
-							color: '#A8C5DA',
+							color: theme.palette.secondary.main,
 							showMark: false,
 							type: 'line',
 							valueFormatter: (v, i) => `${v}`,
@@ -112,7 +147,9 @@ const RevenueComparisonChart = ({revenueByYear}) => {
 							id: '2023Revenue',
 							data: revenueByYear.map((item) => item['2023Revenue']),
 							type: 'line',
-							color: '#1C1C1C',
+							color: isDarkTheme
+								? theme.palette.purple.main
+								: theme.palette.secondary.main,
 							showMark: false,
 							valueFormatter: (v, i) =>
 								i.dataIndex > 4 ? `${v} (estimated)` : `${v}`,

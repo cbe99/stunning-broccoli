@@ -6,18 +6,14 @@ import Header from './components/header';
 import NotificationPanel from './components/notificationPanel';
 import {Main} from './App.styled';
 import AppRoutes from './router';
+import getTheme from './themes/getTheme';
+import {light} from '@mui/material/styles/createPalette';
 
 const App = () => {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 	const [isNotificationPanelOpen, setIsNotificationPanelOpen] = useState(true);
 	const [favorites, setFavorites] = useState([]);
-
-	const lightTheme = createTheme({
-		palette: {
-			mode: 'light',
-		},
-	});
 
 	const darkTheme = createTheme({
 		palette: {
@@ -46,7 +42,7 @@ const App = () => {
 	};
 
 	return (
-		<ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+		<ThemeProvider theme={isDarkMode ? getTheme('dark') : getTheme('light')}>
 			<CssBaseline />
 			<Router>
 				<Sidebar

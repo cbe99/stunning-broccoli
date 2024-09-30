@@ -1,6 +1,16 @@
 import {ArrowDownward, ArrowUpward} from '@mui/icons-material';
-import {Box, Card, CardContent, Typography, useTheme} from '@mui/material';
+import {
+	Box,
+	Card,
+	CardContent,
+	CardHeader,
+	Grid2,
+	Typography,
+	useTheme,
+} from '@mui/material';
 import React from 'react';
+import ArrowUpIconSvg from '../../assets/arrowUpIcon';
+import ArrowDownIconSvg from '../../assets/arrowDownIcon';
 
 const MetricCard = ({type, number, change, currency, unit, color}) => {
 	const theme = useTheme();
@@ -8,43 +18,55 @@ const MetricCard = ({type, number, change, currency, unit, color}) => {
 
 	// Define dynamic colors
 	const cardBgColor = {
-		lightblue: '#ADD8E6',
-		secondary: theme.palette.secondary.main,
-		dark: isDarkTheme ? theme.palette.grey[800] : theme.palette.grey[700],
+		lightblue: theme.palette.primary.main,
+		secondary: theme.palette.primary.light,
+		dark: theme.palette.purple.main,
+	};
+
+	const contrastColor = {
+		lightblue: 'black',
+		secondary: isDarkTheme ? 'white' : 'black',
+		dark: 'black',
 	};
 
 	return (
 		<Card
+			elevation={0}
 			sx={{
 				backgroundColor: cardBgColor[color],
 				color: 'white',
 				mb: 2,
 				height: '100%',
+				width: '100%',
 			}}
 		>
 			<CardContent>
 				<Typography
-					variant="h6"
+					variant="h5"
 					component="div"
 					gutterBottom
+					style={{color: contrastColor[color]}}
 				>
 					{type}
 				</Typography>
 
-				<Typography variant="h4">
-					{currency ? `${currency} ${number}` : `${number}${unit ? unit : ''}`}
-				</Typography>
-
-				<Box
+				<Grid2
+					size={'auto'}
 					display="flex"
+					flexDirection={'row'}
 					alignItems="center"
+					justifyContent={'space-between'}
 					mt={1}
 				>
-					{change.direction === 'increase' ? (
-						<ArrowUpward style={{color: 'green'}} />
-					) : (
-						<ArrowDownward style={{color: 'red'}} />
-					)}
+					<Typography
+						variant="h2"
+						style={{color: contrastColor[color]}}
+					>
+						{currency
+							? `${currency} ${number}`
+							: `${number}${unit ? unit : ''}`}
+					</Typography>
+
 					<Typography
 						variant="body2"
 						ml={1}
@@ -52,8 +74,13 @@ const MetricCard = ({type, number, change, currency, unit, color}) => {
 					>
 						{change.direction === 'increase' ? '+' : '-'}
 						{change.value}%
+						{change.direction === 'increase' ? (
+							<ArrowUpIconSvg style={{color: contrastColor[color]}} />
+						) : (
+							<ArrowDownIconSvg style={{color: contrastColor[color]}} />
+						)}
 					</Typography>
-				</Box>
+				</Grid2>
 			</CardContent>
 		</Card>
 	);
