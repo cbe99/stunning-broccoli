@@ -75,6 +75,10 @@ const AppRoutes = () => {
 	return (
 		<Suspense fallback={<div>Loading...</div>}>
 			<Routes>
+				<Route
+					path="/"
+					element={<Navigate to={'/default'} />}
+				/>
 				{generateRoutes(PATHS.flatMap((pathGroup) => pathGroup.items))}
 				{generateMetricRoutes()}
 			</Routes>
