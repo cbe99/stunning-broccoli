@@ -8,15 +8,20 @@ import {
 	OutlinedInput,
 	Paper,
 	Typography,
+	useTheme,
 } from '@mui/material';
 import React from 'react';
 import {OrderList} from '../../mockData/orderList';
 import {StyledDataGrid} from './orderList.styled';
-import {Add, Search, Sort} from '@mui/icons-material';
+import {Add} from '@mui/icons-material';
 import SortIconSvg from '../../assets/sortIcon';
 import ArrangeIconSvg from '../../assets/arrangeIcon';
+import SearchIconSvg from '../../assets/searchIcon';
 
 const OrderListPage = () => {
+	const theme = useTheme();
+	const isDarkMode = theme.palette.mode === 'dark';
+
 	const getStatus = (row) => {
 		let color;
 		switch (row.status) {
@@ -76,7 +81,7 @@ const OrderListPage = () => {
 				<Avatar sx={{width: 24, height: 24, marginRight: 1}}>
 					{row.profilePicture}
 				</Avatar>
-				<Typography>{row.userName}</Typography>
+				<Typography variant="body1">{row.userName}</Typography>
 			</Box>
 		);
 	};
@@ -95,14 +100,12 @@ const OrderListPage = () => {
 			headerName: 'Project',
 			width: 150,
 			editable: false,
-			flex: 1,
 		},
 		{
 			field: 'address',
 			headerName: 'Address',
 			width: 150,
 			editable: false,
-			flex: 1,
 		},
 		{
 			field: 'date',
@@ -141,13 +144,13 @@ const OrderListPage = () => {
 						}}
 					>
 						<Box sx={{m: 1}}>
-							<IconButton>
+							<IconButton color="inherit">
 								<Add />
 							</IconButton>
-							<IconButton>
+							<IconButton color="inherit">
 								<SortIconSvg />
 							</IconButton>
-							<IconButton>
+							<IconButton color="inherit">
 								<ArrangeIconSvg />
 							</IconButton>
 						</Box>
@@ -157,8 +160,11 @@ const OrderListPage = () => {
 						>
 							<OutlinedInput
 								startAdornment={
-									<InputAdornment position="start">
-										<Search />
+									<InputAdornment
+										position="start"
+										color="inherit"
+									>
+										<SearchIconSvg color={isDarkMode ? 'white' : 'inherit'} />
 									</InputAdornment>
 								}
 								placeholder="Search"
